@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dasbor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('c:/Users/USER/Pictures/Camera Roll/IMG_4399.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(51, 51, 51, 0.8);
+            padding: 10px 0;
+        }
+        .navbar a {
+            padding: 15px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+        }
+        .navbar a:hover {
+            background-color: rgba(87, 87, 87, 0.8);
+        }
+        .content {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            min-height: 100vh;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
+        .gallery img {
+            width: 200px; /* Ukuran maksimal foto */
+            height: auto;
+            margin-right: 10px;
+            padding: 5px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+            cursor: pointer; /* Menambahkan pointer cursor */
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        .gallery::-webkit-scrollbar {
+            height: 10px;
+        }
+        .gallery::-webkit-scrollbar-thumb {
+            background: rgba(87, 87, 87, 0.8);
+            border-radius: 5px;
+        }
+        .gallery::-webkit-scrollbar-track {
+            background: rgba(51, 51, 51, 0.8);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            color: black;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .contact-info {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        .contact-info a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+        .contact-info a img {
+            width: 30px; /* Ukuran logo */
+            height: 30px;
+            margin-right: 10px;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#profile">Profil</a>
+        <a href="#contact">Kontak</a>
+    </div>
+    <div class="content">   
+        <h1>Selamat Datang </h1>
+        <p>Ini adalah web personal branding saya dan disini saya akan menjelaskan siapa saya apa hobi saya dan banyak hal yang saya lakukan oke pertama perkenalkan saya ya"izmi dinihardi mahasiswa informatika angkatan24 di universitas yogyakarta saya berasal dari kalimantan barat dikota pontianak dan hobi saya traveling liburan kemana aja sii inii beberapa foto liburan saya di yogyakarta dan kalimantan barat foto nya bisa kalian klik ya guys untuk melihat penjelasannya  dan dibawah juga ada kontak saya kalian bisa hubungi saya lewat wa dan instagram sekian terima kasih.</p>
+        <section id="profile">
+            <h2>Profil</h2>
+            <p>Ini adalah bagian profil.</p>
+            <div class="gallery">  
+                <img src="c:\Users\USER\Downloads\foto 1.jpg" alt="Foto 1" onclick="showModal('ini adalah foto saya liburan di puncak segoro disini jarak ditempu hampir 2 jam guys rasa cape seru tapi terbalaskan sama pemandangannya yang bagus .')">  
+                <img src="c:\Users\USER\Downloads\foto 2.jpg" alt="Foto 2" onclick="showModal('ini fto saya sama kaka ya bukan pacar dikaliurang.')">
+                <img src="c:\Users\USER\Downloads\foto 3.jpg" onclick="showModal('Foto 3: Ini di jembatan kalikuning disini saya sama teman teman saya cuma ini saya foto sendiri disini dingin dan pemandangan merapinya cantik.')">
+                <img src="c:\Users\USER\Downloads\foto 4.jpg" onclick="showModal('Foto 4: Ini di pantai parangtritis ini saya di gunug kidul di cafr langit sore pemdangan bagus disini bisa melihat sunset dan city light jogja .')">
+                <img src="c:\Users\USER\Downloads\foto 5.jpg" alt="Foto 5" onclick="showModal('Foto 5: Ini juga di parangtritis .')">
+                <img src="c:\Users\USER\Downloads\WhatsApp Image 2025-01-07 at 22.08.41_108d01b2.jpg" alt="Foto " onclick="showModal('Foto 6: Ini foto saya liburan bersama teman sma saya di pantai samudra indah singkawang kalimantan barat.')"> 
+            </div>  
+        </section>
+        <section id="contact">
+            <h2>Kontak</h2>
+            <div class="contact-info">
+                <a href="https://wa.me/082354728887" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">WhatsApp
+                </a>
+                <a href="https://www.instagram.com/yaizmi_/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">Instagram
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="modal-text"></p>
+        </div>
+    </div>
+
+    <script>
+        function showModal(text) {
+            document.getElementById("modal-text").innerText = text;
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
